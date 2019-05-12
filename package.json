@@ -1,5 +1,4 @@
 {
-
   "name": "boilertemplate-webpack-react",
   "author": "René Huiberts",
   "license": "MIT",
@@ -10,7 +9,6 @@
     "dev": "webpack-dev-server --config=config/dev.config.js --hot",
     "prod": "webpack --config=config/prod.config.js"
   },
-
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
@@ -34,11 +32,9 @@
     "webpack-manifest-plugin": "^2.0.4",
     "webpack-merge": "^4.2.1"
   },
-
   "dependencies": {
     "prop-types": "^15.7.2",
     "react-dom": "^16.8.6",
     "react": "^16.8.6"
   }
-
 }
