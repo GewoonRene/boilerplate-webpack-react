@@ -1,60 +1,41 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const path = require('path');
+const merge = require('webpack-merge');
+const common = require('./common.config.js');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = {
+const mapStyle = process.env.MAP_STYLE === 'true';
 
-    entry: './src/index.js',
-    output: {
-        path: path.join(__dirname, '../dist'),
-        filename: 'index.js'
+module.exports = merge (common, {
+    mode: 'development',
+    devtool: 'inline-source-map',
+    devServer: {
+        port: 8080,
+        historyApiFallback: true,
+        overlay: true,
+        open: true,
+        stats: 'errors-only'
     },
-
     module: {
         rules: [
             {
-                test: /\.(jsx?)$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: [
-                            "@babel/preset-env",
-                            "@babel/preset-react"
-                        ]
-                    }
-                }
+                test: /\.css$/,
+                use: [
+                    { loader: "style-loader" },
+                    { loader: mapStyle ? "css-loader?sourceMap" : "css-loader" }
+                ]
             },
             {
-                test: /\.html$/,
-                use: [{
-                    loader: "html-loader"
-                }]
+                test: /\.s(a|c)ss$/,
+                use: [
+                    { loader: "style-loader" },
+                    { loader: "css-loader" },
+                    { loader: "sass-loader" }
+                ]
             },
-            {
-                test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
-            },
-            {
-                test: /\.(jpe?g|png|gif)$/,
-                use: [{
-                    loader: 'url-loader',
-                    options: {
-                        limit: 10000
-                    }
-                }]
-            },
-            {
-                test: /\.(eot|svg|ttf|woff2?|otf)$/,
-                use: 'file-loader'
-            }
-
         ]
     },
-
     plugins: [
-        new HtmlWebPackPlugin({
-            template: "./public/index.html",
-            filename: "./index.html"
-        })
-    ]
-};
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+        }),
+    ],
+});

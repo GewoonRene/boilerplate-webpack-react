@@ -5,7 +5,9 @@ import './styles/index.scss';
 
 const Index = () => {
     return (
-        <div>hello world</div>
+        <div className="app-container">
+        
+        </div>
     )
 }
 
