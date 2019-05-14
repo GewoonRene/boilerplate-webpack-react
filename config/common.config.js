@@ -37,23 +37,11 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'images/[name]_[hash:7].[ext]',
+                            name: 'assets/[name]_[hash:7].[ext]',
                         }
                     },
                 ]
-            },
-            {
-                test: /.*\.(gif|png|jp(e*)g)$/i,
-                use: [
-                    {
-                        loader: "url-loader",
-                        options: {
-                            limit: 10000,
-                            name: "images/[name].[ext]"
-                        }
-                    }
-                ]
-            },
+            }
         ]
     },
     plugins: [
