@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// Component imports 
+
+
+// Styles
 import './styles/index.scss';
 
 const Index = () => {
@@ -12,7 +16,4 @@ const Index = () => {
 }
 
 ReactDOM.render(<Index />, document.getElementById('app'));
-
-if (module.hot) {
-    module.hot.accept();
-}
+if (module.hot) { module.hot.accept() }

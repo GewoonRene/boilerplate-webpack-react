@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -32,7 +33,7 @@ module.exports = {
                 }]
             },
             {
-                test: /.*\.(gif|png|jpe?g|svg)$/i,
+                test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
                 use: [
                     {
                         loader: 'file-loader',
@@ -48,6 +49,7 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: path.resolve(__dirname, '../public', 'index.html'),
         }),
+        new FaviconsWebpackPlugin('./public/favicon.png')
     ],
     resolve: {
         extensions: ['.js', '.jsx']
