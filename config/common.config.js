@@ -4,7 +4,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
     entry: {
-        main: path.resolve(__dirname, "../src", "index.js"),
+        main: path.resolve(__dirname, "../src", "index.tsx"),
     },
     output: {
         filename: '[name].[hash].js',
@@ -20,16 +20,20 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.(ts|js)x?$/,
                 exclude: [/node_modules/],
                 use: [{ 
                     loader: "babel-loader",
                     options: {
                         presets: [
                             "@babel/preset-env",
+                            "@babel/preset-typescript",
                             "@babel/preset-react",
                             {
-                                'plugins': ['@babel/plugin-proposal-class-properties']
+                                'plugins': [
+                                    '@babel/plugin-proposal-class-properties',
+                                    "@babel/proposal-object-rest-spread"
+                                ]
                             }
                         ]
                     }
@@ -55,6 +59,6 @@ module.exports = {
         new FaviconsWebpackPlugin('./public/favicon.png')
     ],
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.ts', '.tsx', '.js']
     },
 }
