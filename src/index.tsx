@@ -1,16 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, { render } from 'react-dom';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './styles/index.scss';
 
 const Index = () => {
     return (
-        <div className="app-container">
-
-        </div>
+        <React.Fragment>
+            <Router>
+                <Switch>
+                    <Route path="/" > </Route>
+                </Switch>
+            </Router>
+        </React.Fragment>
     )
 }
 
-ReactDOM.render(<Index />, document.getElementById('app'));
-
 // @ts-ignore // Ignores HMR
 if (module.hot) { module.hot.accept() }
+render(<Index />, document.getElementById('app'));
