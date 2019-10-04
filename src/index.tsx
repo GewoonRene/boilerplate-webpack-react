@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './styles/index.scss';
 
 "use strict"
-const Index = () => {
+const Index: React.FC = () => {
     return (
         <React.Fragment>
             <Router>
