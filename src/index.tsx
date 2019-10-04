@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM, { render } from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './assets/scss/index.scss';
-import ''
 
 "use strict"
 const Index: React.FC = () => {
