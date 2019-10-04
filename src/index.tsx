@@ -3,6 +3,7 @@ import ReactDOM, { render } from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './styles/index.scss';
 
+"use strict"
 const Index = () => {
     return (
         <React.Fragment>
