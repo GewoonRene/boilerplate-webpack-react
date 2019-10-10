@@ -6,9 +6,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config=config/dev.config.js --hot",
-    "prod": "webpack --config=config/prod.config.js",
-    "typ": "tsc"
+    "start": "webpack-dev-server --config=config/dev.config.js --hot",
+    "build": "webpack --config=config/prod.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
