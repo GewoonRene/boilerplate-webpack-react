@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM, { render } from 'react-dom';
+import { render } from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './assets/scss/index.scss';
 
@@ -17,5 +17,5 @@ const Index: React.FC = () => {
 }
 
 // @ts-ignore // Ignores HMR
-if (module.hot) { module.hot.accept() }
+if (module.hot) module.hot.accept();
 render(<Index />, document.getElementById('app'));
