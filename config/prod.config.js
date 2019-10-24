@@ -5,6 +5,7 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ManifestPlugin = require('webpack-manifest-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const TerserPlugin = require('terser-webpack-plugin');
 
 const enableBundleAnalyzer = process.env.ENABLE_ANALYZER === 'true';
 
@@ -35,6 +36,17 @@ module.exports = merge(common, {
             chunks: 'all',
         },
         runtimeChunk: false,
+        minimize: true,
+        minimizer: [new TerserPlugin({
+            cache: true,
+            parallel: true,
+            sourceMap: true,
+            terserOptions: {
+              ie8: true,
+              safari10: true,
+              sourceMap: true
+            }
+          })]
     },
     plugins: [
         new CleanWebpackPlugin( {
