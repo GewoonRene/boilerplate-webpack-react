@@ -12,10 +12,10 @@
 		"jsx": "react",
 		"allowSyntheticDefaultImports": true,
 		"experimentalDecorators": true,
-		"outDir": "build"
+		"outDir": "dist"
 	},
-	
+
 	"include": [
 		"src"
 	]
-}
+}s
