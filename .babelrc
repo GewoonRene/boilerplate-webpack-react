@@ -1,0 +1,25 @@
+{
+	"presets": [
+		[
+			"@babel/env",
+			{
+				"useBuiltIns": "usage",
+				"corejs": {
+					"version": "3.2",
+					"proposals": true
+				}
+			}
+		],
+		"@babel/react"
+	],
+	"plugins": [
+		[
+			"@babel/plugin-proposal-decorators",
+			{
+				"legacy": true
+			}
+		],
+		"@babel/plugin-proposal-class-properties",
+		"react-hot-loader/babel"
+	]
+}
