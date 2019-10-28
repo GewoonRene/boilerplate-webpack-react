@@ -3,7 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const nl = require('./src/locale/nl.json');
+const nl = require('../src/locale/nl.json');
 
 const dev = (process.env.NODE_ENV === 'development');
 const filename = dev ? '[name]' : '[hash]';
@@ -16,7 +16,7 @@ module.exports = {
   },
 
   output: {
-		path: path.join(__dirname, 'dist'),
+		path: path.join(__dirname, '../dist'),
 		filename: `bundles/${ filename }.js`,
 		chunkFilename: `chunks/${ chunkFilename }.js`,
 		publicPath: '/',
@@ -33,11 +33,12 @@ module.exports = {
 			hash: true,
 			title: nl['app.name'],
 			noscript: nl['app.noscript'],
-			template: path.join(__dirname, 'src', 'index.ejs'),
+			template: path.join(__dirname, '../public', 'index.html'),
 			meta: {
 				viewport: 'width=device-width, initial-scale=1',
 				description: nl['app.description'],
 			},
+			favicon: 'public/favicon.png'
 		}),
 		new MiniCssExtractPlugin({
 			filename: `bundles/${ filename }.css`,
