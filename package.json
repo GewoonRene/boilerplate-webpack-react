@@ -5,14 +5,12 @@
   "license": "MIT",
   "description": "",
   "main": "index.tsx",
-
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --client-log-level warning --hotOnly --progress --config=config/development.config.js",
     "build": "cross-env NODE_ENV=production webpack --progress --config=config/deploy.config.js",
     "build:analyze": "cross-env NODE_ENV=production webpack --progress --config=config/production.config.js",
     "test": ""
   },
-
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -42,7 +40,6 @@
     "webpack-dev-server": "^3.9.0",
     "webpack-merge": "^4.2.2"
   },
-
   "dependencies": {
     "@hot-loader/react-dom": "^16.10.2",
     "core-js": "^3.3.4",
@@ -51,13 +48,11 @@
     "react-hot-loader": "^4.12.15",
     "react-router-dom": "^5.1.2"
   },
-
   "homepage": "https://github.com/GewoonRene/boilerplate-webpack-react#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GewoonRene/boilerplate-webpack-react.git"
   },
-  
   "bugs": {
     "url": "https://github.com/GewoonRene/boilerplate-webpack-react/issues"
   }
