@@ -4,16 +4,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './assets/scss/index.scss';
 
 "use strict"
-const Index: React.FC = (): JSX.Element => {
-    return (
-        <React.Fragment>
-            <Router>
-                <Switch>
-                    <Route path="/" > </Route>
-                </Switch>
-            </Router>
-        </React.Fragment>
-    )
+export const Index: React.FC = (): JSX.Element => {
+  return (
+    <React.Fragment>
+      <Router>
+        <Switch>
+          <Route path="/" > </Route>
+        </Switch>
+      </Router>
+    </React.Fragment>
+  )
 }
 
 // @ts-ignore // Ignores HMR

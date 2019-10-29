@@ -4,7 +4,8 @@
 		"target": "esnext",
 		"module": "esnext",
 		"moduleResolution": "node",
-		"noUnusedParameters": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
 		"noUnusedLocals": true,
 		"noImplicitReturns": true,
 		"allowJs": true,
@@ -12,8 +13,11 @@
 		"jsx": "react",
 		"allowSyntheticDefaultImports": true,
 		"experimentalDecorators": true,
-		"outDir": "dist"
-	},
+    "outDir": "dist",
+    "lib": ["dom", "esnext"],
+    "esModuleInterop": true
+  },
+  "exclude": ["node_modules"],
 	"include": [
 		"src"
 	]
