@@ -3,7 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const nl = require('../src/locale/nl.json');
+const nl = require('../src/utils/locale/nl.json');
 
 const dev = (process.env.NODE_ENV === 'development');
 const filename = dev ? '[name]' : '[hash]';
