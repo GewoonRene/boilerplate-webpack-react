@@ -17,7 +17,11 @@ module.exports = merge(common, {
 	  minimizer: [
 	    new TerserPlugin({
 	    	cache: true,
-	    	parallel: true,
+        parallel: true,
+        terserOptions: {
+          mangle: true
+        }
+        
 	    }),
 	    new OptimizeCssAssetsPlugin({}),
 	  ],
