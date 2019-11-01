@@ -29,7 +29,9 @@ const less = (modules) => ({
 			options: {
 				importLoaders: 1,
 				localsConvention: 'dashes',
-				modules,
+				modules: {
+	        localIdentName: dev ? '[local]' : "[hash:base64:5]",
+	    	},	
 			},
 		},
 		{
