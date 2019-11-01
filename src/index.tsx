@@ -6,7 +6,6 @@ import './assets/scss/index.scss';
 "use strict"
 const Index: React.FC = (): JSX.Element => (
   <React.Fragment>
-    hello
     <Router>
       <Switch>
         <Route path="/" > </Route>
