@@ -9,6 +9,39 @@ const dev = (process.env.NODE_ENV === 'development');
 const filename = dev ? '[name]' : '[hash]';
 const chunkFilename = dev ? '[name]' : '[chunkhash]';
 
+/**
+ * @param {boolean} modules
+ * @returns {Object}
+*/
+
+const less = (modules) => ({
+	test: /\.less$/,
+	use: [
+		{
+			loader: MiniCssExtractPlugin.loader,
+			options: {
+				hmr: dev,
+				reloadAll: true,
+			},
+		},
+		{
+			loader: 'css-loader',
+			options: {
+				importLoaders: 1,
+				localsConvention: 'dashes',
+				modules,
+			},
+		},
+		{
+			loader: 'less-loader',
+			options: {
+				javascriptEnabled: true,
+			},
+		},
+	],
+	[modules ? 'include' : 'exclude']: /\.module\.less$/,
+});
+
 module.exports = {
 
   entry: {
@@ -48,6 +81,8 @@ module.exports = {
 
 	module: {
 		rules: [
+			less(true),
+			less(false),
 			{ // JSX LOADER
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
@@ -61,20 +96,6 @@ module.exports = {
 				use: [
 					'babel-loader',
 					'ts-loader',
-				],
-			},
-			{ // STYLING
-				test: /\.s?css$/,
-				use: [
-					{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							hmr: dev,
-							reloadAll: true,
-						},
-					},
-					'css-loader',
-					'sass-loader',
 				],
 			},
 			{ // IMAGES AND OTHERS
