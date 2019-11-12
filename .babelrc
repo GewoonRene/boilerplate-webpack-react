@@ -11,15 +11,15 @@
 			}
 		],
 		"@babel/react"
-	],
+  ],
+  "env": {
+		"development": {
+			"presets": [
+				"@babel/typescript"
+			]
+		}
+	},
 	"plugins": [
-		[
-			"@babel/plugin-proposal-decorators",
-			{
-				"legacy": true
-			}
-		],
-		"@babel/plugin-proposal-class-properties",
-		"react-hot-loader/babel"
+    "react-hot-loader/babel"
 	]
 }
