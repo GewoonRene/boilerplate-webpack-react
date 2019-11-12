@@ -29,7 +29,7 @@ const less = (modules) => ({
 			options: {
 				importLoaders: 1,
 				localsConvention: 'dashes',
-				modules: {
+				modules: modules && {
 	        localIdentName: dev ? '[local]' : "[hash:base64:5]",
 	    	},	
 			},
@@ -62,7 +62,10 @@ module.exports = {
 	},
 
 	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
+		new MiniCssExtractPlugin({
+			filename: `bundles/${ filename }.css`,
+			chunkFilename: `chunks/${ chunkFilename }.css`,
+		}),
 		new HtmlPlugin({
 			minify: true,
 			hash: true,
@@ -74,10 +77,6 @@ module.exports = {
 				description: nl['app.description'],
 			},
 			favicon: 'public/favicon.png'
-		}),
-		new MiniCssExtractPlugin({
-			filename: `bundles/${ filename }.css`,
-			chunkFilename: `chunks/${ chunkFilename }.css`,
 		})
 	],
 
