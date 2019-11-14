@@ -15,7 +15,28 @@
 		"experimentalDecorators": true,
     "outDir": "dist",
     "lib": ["dom", "esnext"],
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": "src",
+    "paths": {
+      "@assets": [
+        "assets/"
+      ],
+			"@components": [
+				"components/"
+			],
+			"@containers": [
+				"containers/"
+      ],
+      "@context": [
+				"context/"
+      ],
+      "@types": [
+				"types/"
+      ],
+      "@utils": [
+				"utils/"
+      ]
+		}
   },
   "exclude": ["node_modules"],
 	"include": [

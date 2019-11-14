@@ -8,7 +8,9 @@ const Index: React.FC = (): JSX.Element => (
   <React.Fragment>
     <Router>
       <Switch>
-        <Route path="/" > </Route>
+        <Route path="/" >
+          
+        </Route>
       </Switch>
     </Router>
   </React.Fragment>
