@@ -12,9 +12,8 @@
 		"sourceMap": true,
 		"jsx": "react",
 		"allowSyntheticDefaultImports": true,
-		"experimentalDecorators": true,
-    "outDir": "dist",
-    "lib": ["dom", "esnext"],
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "baseUrl": "src",
     "paths": {
