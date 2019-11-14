@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const nl = require('../src/utils/locale/nl.json');
+const theme = require('../src/utils/theme/theme.ts');
 
 const dev = (process.env.NODE_ENV === 'development');
 const filename = dev ? '[name]' : '[hash]';
@@ -37,7 +38,8 @@ const less = (modules) => ({
 		{
 			loader: 'less-loader',
 			options: {
-				javascriptEnabled: true,
+        javascriptEnabled: true,
+        modifyVars: theme
 			},
 		},
 	],

@@ -9,7 +9,7 @@ const Index: React.FC = (): JSX.Element => (
     <Router>
       <Switch>
         <Route path="/" >
-          
+          hello
         </Route>
       </Switch>
     </Router>
