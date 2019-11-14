@@ -1,9 +1,9 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "name": "boilertemplate-webpack-react",
   "author": "René Huiberts",
   "license": "MIT",
-  "description": "",
+  "description": "A Boilertemplate for react / typescript projects",
   "main": "index.tsx",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --client-log-level warning --progress --config=config/development.config.js",
