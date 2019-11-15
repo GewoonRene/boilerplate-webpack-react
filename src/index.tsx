@@ -15,5 +15,5 @@ const Index: React.FC = (): JSX.Element => (
 );
 
 // @ts-ignore // Ignores HMR
-if (module.hot) module.Hot.accept();
+if (module.hot) module.hot.accept();
 render(<Index />, document.getElementById('app'));

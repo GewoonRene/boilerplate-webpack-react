@@ -1,44 +1,46 @@
 {
-	"compilerOptions": {
-		"strict": true,
-		"target": "esnext",
-		"module": "esnext",
-		"moduleResolution": "node",
+  "compilerOptions": {
+    "strict": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
     "noUnusedParameters": true,
     "removeComments": true,
-		"noUnusedLocals": true,
-		"noImplicitReturns": true,
-		"allowJs": true,
-		"sourceMap": true,
-		"jsx": "react",
-		"allowSyntheticDefaultImports": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "paths": {
-      "@assets": [
-        "assets/"
+      "@assets/*": [
+        "assets/*"
       ],
-			"@components": [
-				"components/"
-			],
-			"@containers": [
-				"containers/"
+      "@components/*": [
+        "components/*"
       ],
-      "@context": [
-				"context/"
+      "@containers/*": [
+        "containers/*"
       ],
-      "@types": [
-				"types/"
+      "@context/*": [
+        "context/*"
       ],
-      "@utils": [
-				"utils/"
+      "@types/*": [
+        "types/*"
+      ],
+      "@utils/*": [
+        "utils/*"
       ]
-		}
+    }
   },
-  "exclude": ["node_modules"],
-	"include": [
-		"src"
-	]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src"
+  ]
 }
