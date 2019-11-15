@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './index.less';
 
-"use strict"
+"use strict";
 const Index: React.FC = (): JSX.Element => (
   <React.Fragment>
     <Router>
@@ -12,8 +12,8 @@ const Index: React.FC = (): JSX.Element => (
       </Switch>
     </Router>
   </React.Fragment>
-)
+);
 
 // @ts-ignore // Ignores HMR
-if (module.hot) module.hot.accept();
+if (module.hot) module.Hot.accept();
 render(<Index />, document.getElementById('app'));
