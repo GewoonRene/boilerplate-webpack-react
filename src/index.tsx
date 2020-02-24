@@ -1,19 +1,12 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import React from "react";
+import {render} from "react-dom";
 import './index.less';
 
-"use strict";
-const Index: React.FC = (): JSX.Element => (
-  <React.Fragment>
-    <Router>
-      <Switch>
-        <Route path="/" >  </Route>
-      </Switch>
-    </Router>
-  </React.Fragment>
+const App = (): JSX.Element => (
+  <h1>Hello world</h1>
 );
 
-// @ts-ignore // Ignores HMR
-if (module.hot) module.hot.accept();
-render(<Index />, document.getElementById('app'));
+document.addEventListener('DOMContentLoaded', () => render(
+  <App/>, document.getElementById('app')
+));
