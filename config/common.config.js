@@ -51,7 +51,7 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
       '@components': path.resolve(__dirname, '../src/components')
     }
